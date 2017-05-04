@@ -1,0 +1,13 @@
+<app-nav></app-nav>
+
+<carousel>
+  <slide *ngFor="let slider of slides">
+    <img [src]="slider.image" alt="{{slider.text}}">
+    <div class="carousel-caption">
+      <h3>{{slider.text}}</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </slide>
+
+</carousel>
+
