@@ -5,7 +5,7 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component'
-import { AboutComponent } from './about/about.component'
+
 
 export const rootRouterConfig: Routes = [
   {
@@ -14,5 +14,6 @@ export const rootRouterConfig: Routes = [
     pathMatch: 'full'
   },
   {path:'home' , component:HomeComponent},
-  {path:'about' , component:AboutComponent},
+  {path:'about',loadChildren:'app/about/about.module#AboutModule'},
+  {path:'edit' , loadChildren:'app/edit/edit.module#EditModule'}
 ];

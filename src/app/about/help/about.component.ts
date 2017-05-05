@@ -8,10 +8,11 @@ export function getAccordionConfig(): AccordionConfig {
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css'],
+  templateUrl: 'about.component.html',
+  styleUrls: ['about.component.css'],
   providers: [{provide: AccordionConfig, useFactory: getAccordionConfig}]
 })
+
 export class AboutComponent implements OnInit {
 
   public status: any = {

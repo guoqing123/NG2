@@ -8,7 +8,7 @@ import { CarouselConfig } from 'ng2-bootstrap/carousel';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [{provide: CarouselConfig, useValue: {interval: 3000, noPause: true}}]
+  providers: [{provide: CarouselConfig, useValue: {interval: 3000, noPause: true}}],
 })
 export class HomeComponent implements OnInit {
 

@@ -6,27 +6,26 @@ import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 
 //ng2-bootstrap
-import { AlertModule } from 'ng2-bootstrap/alert';
 import { CarouselModule } from 'ng2-bootstrap/carousel';
-import { AccordionModule } from 'ng2-bootstrap/accordion';
-// import { SharedModule } from '../shared/shared.module';
 
 
 //依赖组件
 import { AppComponent } from './app.component';//主组件
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './shared/nav/nav.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 
 import { rootRouterConfig } from './app.routes';
+
 let rootRouterModule:ModuleWithProviders = RouterModule.forRoot(rootRouterConfig);
+
+//依赖的模块
+import { SharedModule } from './shared/shared.module'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +33,8 @@ let rootRouterModule:ModuleWithProviders = RouterModule.forRoot(rootRouterConfig
     FormsModule,
     HttpModule,
     rootRouterModule,
-    // SharedModule,
     CarouselModule,
-    AccordionModule.forRoot(),
-    AlertModule.forRoot()
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
