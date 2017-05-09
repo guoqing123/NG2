@@ -1,3 +1,9 @@
-<p>
-  ng-select works!
-</p>
+<div class="dropdown">
+  <button class="btn btn-default" type="button" aria-expanded="true" (click)="open()">
+    {{defaultText}}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" *ngIf="openMenu&&optionInfo.length">
+    <li *ngFor = "let item of optionInfo ;let index = index" (click)="selectV(item)"><span>{{item.name}}</span></li>
+  </ul>
+</div>

@@ -3,8 +3,8 @@
  */
 
 import { NgModule } from '@angular/core';
-
-import { NgSelectComponent } from './ng-select/ng-select.component';
+import { CommonModule } from '@angular/common'
+import NgSelectComponent  from './ng-select/ng-select.component';
 
 @NgModule({
   declarations:[
@@ -12,6 +12,9 @@ import { NgSelectComponent } from './ng-select/ng-select.component';
   ],
   exports:[
     NgSelectComponent,
+  ],
+  imports:[
+    CommonModule,
   ]
 })
 

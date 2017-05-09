@@ -1,4 +1,5 @@
 <p>
   list works!
 </p>
-<app-ng-select></app-ng-select>
+<app-ng-select [optionInfo]="optionInfo" (select)="selectCallBack($event)" [defaultValue]="defaultValue"></app-ng-select>
+
