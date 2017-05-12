@@ -1,5 +1,8 @@
-<p>
-  list works!
-</p>
+<app-title>
+  <header><span>我是编辑页面</span></header>
+</app-title>
+
 <app-ng-select [optionInfo]="optionInfo" (select)="selectCallBack($event)" [defaultValue]="defaultValue"></app-ng-select>
 
+<input type="text" #input>
+<button class="btn" [@buttonStatus]="status" (click)="toggleStatus()">动画</button>

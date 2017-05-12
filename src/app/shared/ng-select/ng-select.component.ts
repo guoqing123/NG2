@@ -11,7 +11,7 @@ export default class NgSelectComponent implements OnInit {
   private openMenu:boolean = false;
   private defaultText:any;
 
-  @Input() optionInfo:Array<any> = [];
+  @Input() optionInfo:any = {};
   @Input() defaultValue:any;
   @Output() select = new EventEmitter<boolean>();
 

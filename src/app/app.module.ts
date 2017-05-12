@@ -13,19 +13,25 @@ import { CarouselModule } from 'ng2-bootstrap/carousel';
 import { AppComponent } from './app.component';//主组件
 import { NavComponent } from './shared/nav/nav.component';
 import { HomeComponent } from './home/home.component';
+import { QuestionComponent } from './question/question.component';
+import { QuestionListComponent } from './question/list/question.list.component'
 
 import { rootRouterConfig } from './app.routes';
 
 let rootRouterModule:ModuleWithProviders = RouterModule.forRoot(rootRouterConfig);
 
 //依赖的模块
-import { SharedModule } from './shared/shared.module'
+import { SharedModule } from './shared/shared.module';
+import { RecordComponent } from './question/record/record.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
+    QuestionComponent,
+    RecordComponent,
+    QuestionListComponent,
   ],
   imports: [
     BrowserModule,

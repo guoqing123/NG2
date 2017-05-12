@@ -8,14 +8,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" [routerLink] = "['/home']">首页</a>
+      <a class="navbar-brand" [routerLink] = "['/home']" routerLinkActive="active">首页</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a>我的问卷 <span class="sr-only">(current)</span></a></li>
-        <li [routerLink] = "['/about']"><a>帮助</a></li>
+        <li [routerLink] = "['/question']" routerLinkActive="active"><a>我的问卷 <span class="sr-only">(current)</span></a></li>
+        <li [routerLink] = "['/about']" routerLinkActive="active"><a>帮助</a></li>
         <!--<li class="dropdown">-->
           <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
           <!--<ul class="dropdown-menu">-->
@@ -31,7 +31,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li [routerLink] = "['/edit']"><a>创建新问卷</a></li>
+        <li [routerLink] = "['/edit']" routerLinkActive="active"><a>创建新问卷</a></li>
         <li><a>注册</a></li>
         <li><a>登录</a></li>
         <!--<li class="dropdown">-->
