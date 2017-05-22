@@ -1,7 +1,8 @@
+import {Injectable} from "@angular/core";
 /**
  * Created by caiguoqing on 2017/5/12.
  */
-
+@Injectable()
 export class ListData{
   constructor(){}
   Data(){

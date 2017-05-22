@@ -4,7 +4,7 @@
 
 
 import {Pipe, PipeTransform} from "@angular/core";
-@Pipe({name:'Search',})
+@Pipe({name:'Search',pure:false})
 
 export class Search implements PipeTransform{
   transform(val,select){

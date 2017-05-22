@@ -6,8 +6,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule ,Routes} from '@angular/router';
 import { FormsModule } from '@angular/forms'
 import { ListComponent } from './list/list.component'
+import { EditListItem } from './listitem/list-item.component'
 import { SharedModule } from '../shared/shared.module'
 import { Search } from '../pipe/searchPipe'
+
+import { BeautifulBackgroundDirective } from '../directive/setBackG'
+import { SharedService } from '../service/sharedService'
 
 const editRouter:Routes = [
   {path:'',component: ListComponent},
@@ -18,6 +22,8 @@ const editRouter:Routes = [
   declarations:[
     ListComponent,
     Search,
+    BeautifulBackgroundDirective,
+    EditListItem,
   ],
   imports:[
     CommonModule,
@@ -25,6 +31,7 @@ const editRouter:Routes = [
     SharedModule,
     FormsModule
   ],
+  providers:[SharedService,]
 
 })
 

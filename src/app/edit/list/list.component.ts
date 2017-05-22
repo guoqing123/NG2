@@ -2,7 +2,8 @@ import {
   Component, OnInit, Renderer, ViewChild, ElementRef, trigger, state, style, transition, animate,
   keyframes
 } from '@angular/core';
-import { ListData } from './list-data'
+
+import { SharedService } from '../../service/sharedService'
 @Component({
   selector: 'edit-list',
   templateUrl: 'list.component.html',
@@ -24,7 +25,7 @@ import { ListData } from './list-data'
       transition('off => on',animate('300ms ease-in'))
     ]),
   ],
-  providers:[ListData]
+  providers:[]
 })
 export class ListComponent implements OnInit {
   defaultValue:any = '123';
@@ -38,16 +39,18 @@ export class ListComponent implements OnInit {
   input:ElementRef = null;
   private status:string = 'on';
   private contactName:string = 'TimCook';
-  public _ListData:any;
-  private search:any;
+  private red:string = 'red';
+  private ListData:any;
 
 
-  constructor(private _render:Renderer,private listData:ListData) {
-    this._ListData = this.listData.Data()
+  constructor(private _render:Renderer,private _sharedService:SharedService) {
+
+
+
   }
 
   ngOnInit() {
-
+    this.ListData = this._sharedService.list
   }
 
   ngAfterViewInit(){
@@ -64,12 +67,6 @@ export class ListComponent implements OnInit {
     this.status == 'on' ? this.status = 'off' : this.status = 'on'
     this.contactName = 'BillGates'
     this.optionInfo.push({name:'bianhua',id:1})
-  }
-
-  addList(){
-    this._ListData.push(
-      {id:this._ListData.length+1,name:'张三',age:21,professional:'教师'}
-    )
   }
 
 

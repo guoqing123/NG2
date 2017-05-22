@@ -1,0 +1,29 @@
+<input type="text" [(ngModel)]="search" placeholder="模糊匹配搜索">
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>姓名</th>
+    <th>职业</th>
+    <th>年龄</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contact of (ListData | Search:search)">
+    <td>
+      <span>{{contact.id}}</span>
+    </td>
+    <td>
+      <span>{{contact.name}}</span>
+    </td>
+    <td>
+      <span>{{contact.professional}}</span>
+    </td>
+    <td>
+      <span>{{contact.age}}</span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" (click)="add()">增加</button>
