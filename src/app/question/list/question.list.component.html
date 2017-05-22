@@ -1,4 +1,31 @@
-<div calss="cantact-info">
-  <label class="contact-name">{{contact.name}}</label>
-  <span class="contact-tel">{{contact.tel}}</span>
-</div>
+<form #contactForm="ngForm" novalidate>
+  <ul>
+    <li>
+      <label>姓名：</label>
+      <input type="text" name="contactName" [(ngModel)] = "curContact.name" #curContactName = "ngModel" required maxlength="5" minlength="3" (blur)="changeVal(curContactName)" (focus)="focus(curContactName)">
+      <span class="error" *ngIf="!curContactName.valid && curContactName.dirty && curContactName.blur" >请输入姓名</span>
+    </li>
+    <li>
+      <label>电话：</label>
+      <input type="text" name="telNum" [(ngModel)] = "curContact.telNum" #curContactTelNum="ngModel" required pattern="1[0-9]{10}">
+      <span class="error" [hidden]="curContactTelNum.valid || curContactTelNum.pristine">请输入正确电话号码</span>
+    </li>
+  </ul>
+  <button class="btn btn-primary" (click)="submit(contactForm)" [disabled] = "!contactForm.valid">提交</button>
+</form>
+<table class="table">
+  <thead>
+  <tr>
+    <th>姓名</th>
+    <th>电话</th>
+    <th>职业</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let contact of (contacts | selectList:'李');let index = index">
+    <td><span>{{contact.name}}</span></td>
+    <td><span>{{contact.telNum}}</span></td>
+    <td><span>学生</span></td>
+  </tr>
+  </tbody>
+</table>

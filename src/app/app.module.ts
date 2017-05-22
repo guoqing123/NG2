@@ -8,6 +8,10 @@ import { RouterModule} from '@angular/router';
 //ng2-bootstrap
 import { CarouselModule } from 'ng2-bootstrap/carousel';
 
+//服务
+import { selectList } from './pipe/selectList'
+
+
 
 //依赖组件
 import { AppComponent } from './app.component';//主组件
@@ -32,6 +36,7 @@ import { RecordComponent } from './question/record/record.component';
     QuestionComponent,
     RecordComponent,
     QuestionListComponent,
+    selectList,
   ],
   imports: [
     BrowserModule,

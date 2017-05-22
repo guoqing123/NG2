@@ -2,7 +2,7 @@ import {
   Component, OnInit, Renderer, ViewChild, ElementRef, trigger, state, style, transition, animate,
   keyframes
 } from '@angular/core';
-
+import { ListData } from './list-data'
 @Component({
   selector: 'edit-list',
   templateUrl: 'list.component.html',
@@ -23,7 +23,8 @@ import {
       transition('on => off',animate('300ms ease-in')),
       transition('off => on',animate('300ms ease-in'))
     ]),
-  ]
+  ],
+  providers:[ListData]
 })
 export class ListComponent implements OnInit {
   defaultValue:any = '123';
@@ -36,9 +37,13 @@ export class ListComponent implements OnInit {
   ]
   input:ElementRef = null;
   private status:string = 'on';
+  private contactName:string = 'TimCook';
+  public _ListData:any;
+  private search:any;
 
-  constructor(private _render:Renderer) {
 
+  constructor(private _render:Renderer,private listData:ListData) {
+    this._ListData = this.listData.Data()
   }
 
   ngOnInit() {
@@ -57,6 +62,15 @@ export class ListComponent implements OnInit {
 
   toggleStatus(){
     this.status == 'on' ? this.status = 'off' : this.status = 'on'
+    this.contactName = 'BillGates'
+    this.optionInfo.push({name:'bianhua',id:1})
   }
+
+  addList(){
+    this._ListData.push(
+      {id:this._ListData.length+1,name:'张三',age:21,professional:'教师'}
+    )
+  }
+
 
 }

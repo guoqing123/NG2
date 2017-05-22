@@ -1,10 +1,10 @@
-import {Component, OnInit, Input, Output,EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, SimpleChange, OnChanges,ChangeDetectionStrategy} from '@angular/core';
 
 
 @Component({
   selector: 'app-ng-select',
   templateUrl: 'ng-select.component.html',
-  styleUrls: ['ng-select.component.css']
+  styleUrls: ['ng-select.component.css'],
 })
 
 export default class NgSelectComponent implements OnInit {
@@ -19,6 +19,10 @@ export default class NgSelectComponent implements OnInit {
 
   ngOnInit() {
     this.defaultText = this.defaultValue
+  }
+
+  ngOnChanges(changes:SimpleChange){
+    console.log(changes['optionInfo'])
   }
 
   open(){

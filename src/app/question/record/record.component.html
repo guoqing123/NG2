@@ -1,9 +1,5 @@
 <app-title>
   <header>我是我的问卷页面</header>
 </app-title>
-<div  (click) ="viewChildClick()">子路由</div>
-<ul class="list">
-  <li class="list-item" *ngFor="let contact of contacts">
-    <question-list-component [contact] = "contact" ></question-list-component>
-  </li>
-</ul>
+<div [routerLink] = "['/question/list']">我的问卷</div>
+

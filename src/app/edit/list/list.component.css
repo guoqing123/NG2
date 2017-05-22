@@ -1,0 +1,10 @@
+.test{
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: all 3s ease;
+}
+.isBlue{
+  background: #4196cb;
+  transition: all 3s ease;
+}

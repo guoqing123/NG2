@@ -4,5 +4,39 @@
 
 <app-ng-select [optionInfo]="optionInfo" (select)="selectCallBack($event)" [defaultValue]="defaultValue"></app-ng-select>
 
-<input type="text" #input>
+<input type="text" #input [(ngModel)]="search" name="search">
 <button class="btn" [@buttonStatus]="status" (click)="toggleStatus()">动画</button>
+<div class="test" [class.isBlue] = "status=='off'" [class.hidden] ="true"></div>
+<div [ngSwitch] = "contactName">
+  <span *ngSwitchCase="'TimCook'">蒂姆。库克</span>
+  <span *ngSwitchCase="'BillGates'">比尔盖茨</span>
+  <span *ngSwitchDefault>无名氏</span>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>姓名</th>
+      <th>职业</th>
+      <th>年龄</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of (_ListData | Search:search)">
+      <td>
+        <span>{{contact.id}}</span>
+      </td>
+      <td>
+        <span>{{contact.name}}</span>
+      </td>
+      <td>
+        <span>{{contact.professional}}</span>
+      </td>
+      <td>
+        <span>{{contact.age}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" (click)="addList()">增加</button>

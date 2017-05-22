@@ -2,24 +2,37 @@
  * Created by caiguoqing on 2017/5/10.
  */
 
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 @Component({
   selector:'question-list-component',
   templateUrl:'question.list.component.html',
+  styleUrls:['question.list.component.css'],
 })
 
 export class QuestionListComponent implements OnInit{
 
-  @Input() contact:any;
-
+  public curContact:any = {};
+  public contacts:Array<any> = [];
 
   constructor(){}
   ngOnInit(){
 
   }
 
-  conllect(){
-    alert()
+
+  submit(contactForm){
+
+    this.contacts.push({name:contactForm.value.contactName,telNum:contactForm.value.telNum})
+
   }
+
+  changeVal(status){
+    status.blur = true
+  }
+
+  focus(status){
+    status.blur = false
+  }
+
 
 }
