@@ -1,0 +1,12 @@
+{
+  "data":[
+    {"name":"张三","age":18,"professional":"学生","id":1,"sex":"男"},
+    {"name":"王丽","age":26,"professional":"老师","id":2,"sex":"女"},
+    {"name":"李军","age":32,"professional":"老师","id":3,"sex":"男"},
+    {"name":"莉莉","age":18,"professional":"学生","id":4,"sex":"女"}
+  ],
+  "error":{
+    "message":"请求错误",
+    "status":404
+  }
+}

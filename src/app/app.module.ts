@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule , RequestOptions ,Http} from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 
@@ -10,7 +10,9 @@ import { CarouselModule } from 'ng2-bootstrap/carousel';
 
 //服务
 import { selectList } from './pipe/selectList'
-
+import { HttpInterceptor } from './service/http-interceptor'
+import { HttpInterceptorBackend } from './service/http-interceptor-backend'
+import { httpFactory } from './service/http-factory'
 
 
 //依赖组件
@@ -47,7 +49,14 @@ import { RecordComponent } from './question/record/record.component';
     CarouselModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [
+    HttpInterceptor,HttpInterceptorBackend,
+    {
+      provide:Http,useFactory:httpFactory,deps:[HttpInterceptorBackend,RequestOptions]
+    },
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

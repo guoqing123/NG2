@@ -8,6 +8,9 @@ import {Pipe, PipeTransform} from "@angular/core";
 
 export class Search implements PipeTransform{
   transform(val,select){
-    return val.filter(val => val.name.match(select))
+    return val.filter((val) => {
+      return val.name.match(select)
+      // val.name.match(select)
+    })
   }
 }
